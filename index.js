@@ -131,7 +131,7 @@ const createIntern = () => {
 
 function createHTML() {
   const getMarkdown = createHTML();
-  fs.writeFile("./dist/index.html", getMarkdown, (error) =>
+  fs.writeFile("./dist/outputindex.html", getMarkdown, (error) =>
     err ? console.error(error) : console.log("Successfully created HTML!")
   );
 }
