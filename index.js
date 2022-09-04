@@ -130,9 +130,13 @@ const createIntern = () => {
 };
 
 function createHTML() {
-  const getMarkdown = createHTML();
-  fs.writeFile("./dist/outputindex.html", getMarkdown, (error) =>
-    err ? console.error(error) : console.log("Successfully created HTML!")
+  //   const getMarkdown = createHTML();
+  console.log(teamMembers);
+  fs.writeFile(
+    "./dist/outputindex.html",
+    JSON.stringify(teamMembers),
+    (error) =>
+      error ? console.error(error) : console.log("Successfully created HTML!")
   );
 }
 
