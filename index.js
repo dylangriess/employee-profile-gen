@@ -3,6 +3,7 @@ const fs = require("fs");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+const output = require("./src/output.js");
 
 const teamMembers = [];
 
@@ -60,7 +61,7 @@ const createEmployee = () => {
       } else if (response.role === "Intern") {
         createIntern();
       } else {
-        createHTML();
+        createHTML(teamMembers);
       }
     });
 };
@@ -129,14 +130,11 @@ const createIntern = () => {
     });
 };
 
-function createHTML() {
+function createHTML(teamMembers) {
   //   const getMarkdown = createHTML();
   console.log(teamMembers);
-  fs.writeFile(
-    "./dist/outputindex.html",
-    JSON.stringify(teamMembers),
-    (error) =>
-      error ? console.error(error) : console.log("Successfully created HTML!")
+  fs.writeFile("./dist/outputindex.html", output(teamMembers), (error) =>
+    error ? console.error(error) : console.log("Successfully created HTML!")
   );
 }
 
