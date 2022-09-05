@@ -132,7 +132,7 @@ const createIntern = () => {
 
 function createHTML(teamMembers) {
   //   const getMarkdown = createHTML();
-  console.log(teamMembers);
+  // console.log(teamMembers);
   fs.writeFile("./dist/outputindex.html", output(teamMembers), (error) =>
     error ? console.error(error) : console.log("Successfully created HTML!")
   );

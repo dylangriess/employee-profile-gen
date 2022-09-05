@@ -1,10 +1,12 @@
 # Team Profile Generator
 
+## Video Link
+
+> https://watch.screencastify.com/v/3FahD92joGZPvq6ljhtP
+
 ---
 
-## Link
-
-> https://dylangriess.github.io/employee-profile-gen/
+![Team-Profile-Generator Screenshot](https://user-images.githubusercontent.com/107587452/188513961-6461e9cd-cf2d-465a-8982-ee52f440771f.png)
 
 ---
 
