@@ -4,9 +4,10 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const output = require("./src/output.js");
-
+//teamMembers begins as empty array, profiles to be pushed into array
 const teamMembers = [];
 
+//function to create manager, included in init() function
 const createManager = () => {
   console.log("Please build your team.");
   return inquirer
@@ -35,11 +36,13 @@ const createManager = () => {
     .then((managerValues) => {
       const { name, id, email, officeNum } = managerValues;
       const manager = new Manager(name, id, email, officeNum);
+      //values pushed into teamMembers array
       teamMembers.push(manager);
       createEmployee();
     });
 };
 
+//createEmployee is used to discern between engineers and interns being added
 const createEmployee = () => {
   return inquirer
     .prompt([
@@ -61,6 +64,7 @@ const createEmployee = () => {
       } else if (response.role === "Intern") {
         createIntern();
       } else {
+        //if no more team members selected, createHTML with dynamically rendered content
         createHTML(teamMembers);
       }
     });
@@ -139,6 +143,7 @@ function createHTML(teamMembers) {
 }
 
 // TODO: Create a function to initialize app
+//initialized function will allow user to capture manager data right when node.js called
 function init() {
   createManager();
 }

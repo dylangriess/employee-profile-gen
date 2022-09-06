@@ -1,3 +1,4 @@
+//this will export data into HTML mockup and then written into outputindex.html
 module.exports = (team) => {
   return `
 <!DOCTYPE html>
@@ -34,7 +35,7 @@ module.exports = (team) => {
   </body>
 </html>`;
 };
-
+//teamMembers function holds manager, engineer and intern data to create HTML
 const teamMembers = (teamMembers) => {
   const generateManager = (manager) => {
     return `
@@ -90,6 +91,7 @@ const teamMembers = (teamMembers) => {
   </div>`;
   };
   const cardsArray = [];
+  //cards filtered by getRole() --> calls function for individual position
   cardsArray.push(
     teamMembers
       .filter((employee) => employee.getRole() === "Manager")
@@ -105,5 +107,6 @@ const teamMembers = (teamMembers) => {
       .filter((employee) => employee.getRole() === "Intern")
       .map((intern) => generateIntern(intern))
   );
+  //return final cardsArray
   return cardsArray.join("");
 };

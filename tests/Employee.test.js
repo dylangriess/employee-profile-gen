@@ -1,5 +1,6 @@
 const Employee = require("../lib/employee");
 
+//expect to see object with defined key pairs --> can use for other test functions such as engineer, intern, and manager
 describe("Employee Class", () => {
   it("should create an Object with name, id, and email key pair values", () => {
     const employee = new Employee("Dylan", 10, "dylangriess@gmail.com");
